@@ -6,6 +6,7 @@ import calculator.entities.Language;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import java.util.Locale;
 
 public class TranslatorImplTest {
     Translator translator;
@@ -26,15 +27,12 @@ public class TranslatorImplTest {
     @Test(invocationCount = 100, threadPoolSize = 5)
     public void testTranslateDummy() throws Exception {
         String response = translator.translate(en, es, "hello world");
-        Assert.assertEquals(response, "hola mundo");
+        Assert.assertEquals(response, "Hola Mundo");
 
         response = translator.translate(es, en, "hola mundo");
-        Assert.assertEquals(response, "hello word");
-
-        response = translator.translate(es, it, "hola mundo");
-        Assert.assertEquals(response, "ciao mondo");
+        Assert.assertEquals(response, "Hello World");
 
         response = translator.translate(it, fr, "ciao mondo");
-        Assert.assertEquals(response, "bonjour tout le monde");
+        Assert.assertEquals(response, "bonjour le monde");
     }
 }
