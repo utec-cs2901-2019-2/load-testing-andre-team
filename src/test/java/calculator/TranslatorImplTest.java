@@ -28,13 +28,13 @@ public class TranslatorImplTest {
         String response = translator.translate(en, es, "hello world");
         Assert.assertEquals(response, "hola mundo");
 
-        String response = translator.translate(es, en, "hola mundo");
+        response = translator.translate(es, en, "hola mundo");
         Assert.assertEquals(response, "hello word");
 
-        String response = translator.translate(es, it, "hola mundo");
+        response = translator.translate(es, it, "hola mundo");
         Assert.assertEquals(response, "ciao mondo");
 
-        String response = translator.translate(it, fr, "ciao mondo");
+        response = translator.translate(it, fr, "ciao mondo");
         Assert.assertEquals(response, "bonjour tout le monde");
     }
 }
